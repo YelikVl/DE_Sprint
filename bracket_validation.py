@@ -3,6 +3,8 @@ def valid_brackets(x):
     for char in x:
         if char == "(" or char == "{" or char == "[":
             not_closed.append(char)
+        elif (char == ")" or char == "}" or char == "]") and len(not_closed)==0:
+            return False
         elif char == ")" and not_closed.pop() != "(":
             return False
         elif char == "]" and not_closed.pop() != "[":
